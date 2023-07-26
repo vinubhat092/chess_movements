@@ -2,11 +2,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .utils import get_valid_moves_queen, get_valid_moves_bishop, get_valid_moves_rook, get_valid_moves_knight
 from .serializers import ChessMoveSerializer
+import json
 
 @api_view(['POST','GET'])
 def get_valid_moves(request,slug):
     print("dsd",slug)
     serializer = ChessMoveSerializer(data=request.data)
+    
 
     if serializer.is_valid():
         data = serializer.validated_data

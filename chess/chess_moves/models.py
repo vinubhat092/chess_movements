@@ -4,8 +4,8 @@ from django.conf import settings
 User = settings.AUTH_USER_MODEL
 
 class ChessPiece(models.Model):
-    # user = models.ForeignKey(User,default=1,null=True,on_delete=models.SET_NULL)
-    Queen = models.CharField(max_length=10)
-    Bishop = models.CharField(max_length=10)
-    Rook = models.CharField(max_length=10)
-    Knight = models.CharField(max_length=10)
+    user = models.ForeignKey(User,default=1,null=True,on_delete=models.SET_NULL)
+    Queen = models.CharField(max_length=10,default=1,null=True)
+    Bishop = models.CharField(max_length=10,default=1,null=True)
+    Rook = models.CharField(max_length=10,default=1,null=True)
+    Knight = models.CharField(max_length=10,default=1,null=True)

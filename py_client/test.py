@@ -1,11 +1,10 @@
 import requests
-
+import json
 def make_api_request():
-    url = "http://localhost:8000/api/get_valid_moves/rook/"
+    url = "http://localhost:8000/chess/rook/"
 
     # Input data in JSON format
     input_data =  {"Queen": "A5", "Bishop": "G8", "Rook":"H5", "Knight": "G4"}
-
     try:
         response = requests.post(url, json=input_data)
 
